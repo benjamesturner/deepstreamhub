@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1561.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 11.0px; font: 10.0px Arial; color: #222222; -webkit-text-stroke: #222222}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 11.0px; font: 10.0px Arial; color: #222222; -webkit-text-stroke: #222222; min-height: 11.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 11.0px; font: 10.0px Arial; color: #222222; -webkit-text-stroke: #222222; background-color: #ffffff}
+    span.s1 {font-kerning: none; background-color: #ffffff}
+    span.s2 {font-kerning: none}
+    span.s3 {text-decoration: underline ; font-kerning: none; color: #1155cc; -webkit-text-stroke: 0px #1155cc}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en-US"&gt;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span></p>
+<p class="p1"><span class="s1">    &lt;title&gt;Today's Date&lt;/title&gt;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">let d = new Date();</span></p>
+<p class="p1"><span class="s1">document.body.innerHTML = "&lt;h1&gt;Today's date is " + d + "&lt;/h1&gt;"</span></p>
+<p class="p1"><span class="s1">const deepstream = require('deepstream.io-client-js')</span></p>
+<p class="p1"><span class="s1">const client = deepstream('wss://<a href="http://54.206.71.197/deepstream:6020'"><span class="s3">54.206.71.197/deepstream:6020'</span></a>);  </span></p>
+<p class="p1"><span class="s1">var ds = deepstream( '&lt;YOUR APP URL&gt;' );</span></p>
+<p class="p1"><span class="s1">ds.login();</span></p>
+<p class="p1"><span class="s1">var input = $( '#firstname-input' );</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">var myRecord = ds.record.getRecord( 'test/johndoe' );</span></p>
+<p class="p1"><span class="s1">myRecord.set({</span></p>
+<p class="p1"><span class="s1">    firstname: 'John',</span></p>
+<p class="p1"><span class="s1">    lastname: 'Doe'</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">// Update the input when the record changes</span></p>
+<p class="p1"><span class="s1">myRecord.subscribe( 'firstname', function( firstname ){</span></p>
+<p class="p1"><span class="s1">    input.val( firstname );</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">// Update the record when the input changes</span></p>
+<p class="p1"><span class="s1">input.on( 'keyup', function(){</span></p>
+<p class="p1"><span class="s1">    myRecord.set( 'firstname', input.val() );</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s2">&lt;/html&gt;</span></p>
+</body>
+</html>
